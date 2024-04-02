@@ -6,6 +6,8 @@ public class CharMove : MonoBehaviour
 {
     Animator animator;
     CharacterController cc;
+    AudioSource uniVoice;
+    public AudioClip[] voices;
 
     Vector3 dir = Vector3.zero;
     public float gravity = 20f;
@@ -16,6 +18,7 @@ public class CharMove : MonoBehaviour
     {
         animator=GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
+        uniVoice = GetComponent<AudioSource>();
         
     }
 
@@ -39,7 +42,9 @@ public class CharMove : MonoBehaviour
         }
         
     }
+    //
     public void OnJumpStart(){
         dir.y = jumpPower;
+        uniVoice.PlayOneShot(voices[1]);
     }
 }
