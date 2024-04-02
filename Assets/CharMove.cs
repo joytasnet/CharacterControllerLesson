@@ -39,4 +39,7 @@ public class CharMove : MonoBehaviour
         }
         
     }
+    public void OnJumpStart(){
+        dir.y = jumpPower;
+    }
 }
